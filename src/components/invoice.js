@@ -1,7 +1,7 @@
 import React from 'react';
 import LineItem from './lineitem';
 import SendButton from './sendButton';
-import Total from './total';
+
 
 export default class Invoice extends React.Component {
     constructor (props) {
@@ -21,21 +21,21 @@ export default class Invoice extends React.Component {
         return (
             <div>
                 <div>
-                    <label className="elementsStyle1">
+                    <label className="inputLabel">
                             Name:
-                        <input type="text" name="name"  className="inputFields"/>
+                        <input type="text" name="name" className="inputFields" />
                     </label>
                 </div>
                 <div>
-                    <label>
+                    <label className="inputLabel">
                             Email:
-                        <input type="email" name="email" />
+                        <input type="email" name="email" className="inputFields"/>
                     </label>
                 </div>
                 <div>
-                    <label>
+                    <label className="inputLabel">
                             Due Date:
-                        <input type="date" name="date" />
+                        <input type="date" name="date" className="inputFields"/>
                     </label>
                 </div>
                 <div>
