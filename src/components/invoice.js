@@ -1,6 +1,7 @@
 import React from 'react';
 import LineItem from './lineitem';
 import SendButton from './sendButton';
+var axios = require('axios');
 
 
 export default class Invoice extends React.Component {
@@ -67,26 +68,29 @@ export default class Invoice extends React.Component {
            methods.forEach(method => this[method] = this[method].bind(this));
        }
 
-       onNameChange(event) {
+      onNameChange(event) {
            this.setState({
                    name: event.target.value
            });
        }
 
-       onEmailChange(event) {
+      onEmailChange(event) {
            this.setState({
                    email: event.target.value
            });
        }
 
-       onDateChange(event) {
+      onDateChange(event) {
            this.setState({
                    date: event.target.value
            });
        }
 
-       saveData() {
-           alert("Invoice created!");
+      saveData() {
+      axios.post('http://localhost:3000/invoice/add', { name: this.state.name, email: this.state.email, date: this.state.date})
+      .then(function(response){
+      alert('Invoice created!')
+});
        }
 
        handleAmountChange(id, desc, amt) {

@@ -22,6 +22,13 @@ console.log('Database Connetion failed:' + e);
 var app = express();
 app.use(parser.json());
 app.use(parser.urlencoded({ extended: true }));
+app.use(function(req, res, next) {
+    res.header('Access-Control-Allow-Credentials', true);
+    res.header('Access-Control-Allow-Origin', '*');
+    res.header('Access-Control-Allow-Methods', 'GET, POST, OPTIONS');
+    res.header('Access-Control-Allow-Headers', 'appid, X-Requested-With, X-HTTP-Method-Override, Content-Type, Accept');
+    next();
+});
 app.set('port', process.env.PORT || 4000);
 
 // Set default route
