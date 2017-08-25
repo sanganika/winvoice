@@ -8,7 +8,7 @@ var connection = mysql.createConnection({
 host     : 'localhost',
 user     : 'root',
 password : 'admin',
-database : 'dev'
+database : 'winvoice'
 });
 try {
 connection.connect();
@@ -22,27 +22,26 @@ console.log('Database Connetion failed:' + e);
 var app = express();
 app.use(parser.json());
 app.use(parser.urlencoded({ extended: true }));
-app.set('port', process.env.PORT || 3000);
+app.set('port', process.env.PORT || 4000);
 
 // Set default route
 app.get('/', function (req, res) {
-    res.send('<html><body><p>Welcome to Invoice App</p></body></html>');
+    res.send('<html><body><h1>WINVOICE -Simplifying Invoicing</h1></body></html>');
 });
 
 
-app.post('/invoice/add', function (req,res) {
+app.post('/invoice/create', function (req,res) {
 	var response = [];
 
 	if (
-        typeof req.body.id !== 'undefined' &&
 		typeof req.body.name !== 'undefined' &&
 		typeof req.body.email !== 'undefined' &&
 		typeof req.body.date !== 'undefined'
 	) {
-		var name = req.body.name, email = req.body.email, date = req.body.date , id=parseInt(req.body.id);
+		var name = req.body.name, email = req.body.email, date = req.body.date;
 
-		connection.query('INSERT INTO invoice (id, cust_name, cust_email, invoice_date) VALUES (?, ?, ?, ?)',
-			[id, name, email, date],
+		connection.query('INSERT INTO transactions (custName, custEmail, txn_date) VALUES (?, ?, ?)',
+			[name, email, date],
 			function(err, result) {
 		  		if (!err){
 
