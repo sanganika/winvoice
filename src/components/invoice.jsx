@@ -1,5 +1,5 @@
 import React from 'react';
-import LineItem from './lineitem';
+import LineItem from './lineitem.jsx';
 var axios = require('axios');
 
 
