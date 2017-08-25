@@ -48,7 +48,7 @@ app.post('/invoice/create', function (req,res) {
 	) {
 		var name = req.body.name, email = req.body.email, date = req.body.date, total = req.body.total;
 
-		connection.query('INSERT INTO transactions (custName, custEmail, txn_date, totalAmt) VALUES (?, ?, ?, ?)',
+		connection.query('INSERT INTO invoice (custName, custEmail, due_date, dueAmt) VALUES (?, ?, ?, ?)',
 			[name, email, date, total],
 			function(err, result) {
 		  		if (!err){

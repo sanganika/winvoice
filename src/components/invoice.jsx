@@ -117,6 +117,7 @@ export default class Invoice extends React.Component {
                 axios.post('http://localhost:4000/invoice/create', { name: this.state.name, email: this.state.email, date: this.state.date, total: this.state.total })
                     .then(function(response) {
                         alert('Invoice created!')
+                        window.location.reload();
                     });
             }
 
