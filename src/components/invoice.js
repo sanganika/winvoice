@@ -1,6 +1,5 @@
 import React from 'react';
 import LineItem from './lineitem';
-import SendButton from './sendButton';
 var axios = require('axios');
 
 
