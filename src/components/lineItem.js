@@ -14,10 +14,14 @@ export default class LineItem extends React.Component {
 
     render () {
         return (
-            <div>
+          <div className="row">
+            <div className="col-lg-6">
                 <input type="text" name="desc" onChange={this.onDescChange}/>
+            </div>
+            <div className="col-lg-6">
                 <input type="text" name="amount" onChange={this.onAmountChange}/>
             </div>
+          </div>
         );
     }
 

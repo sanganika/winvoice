@@ -12,6 +12,15 @@
         color: grey;
 }
 
+.inputLabelRight{
+        margin-top: 20px;
+        text-align: right;;
+        padding-left: 180px;
+        font-size: 17px;
+        font-family: sans-serif;
+        color: grey;
+}
+
 .inputFields{
         margin-top: 20px;
         margin-right: 650px;
