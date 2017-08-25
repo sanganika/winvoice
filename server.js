@@ -43,12 +43,13 @@ app.post('/invoice/create', function (req,res) {
 	if (
 		typeof req.body.name !== 'undefined' &&
 		typeof req.body.email !== 'undefined' &&
-		typeof req.body.date !== 'undefined'
+		typeof req.body.date !== 'undefined'  &&
+    typeof req.body.total !== 'undefined'
 	) {
-		var name = req.body.name, email = req.body.email, date = req.body.date;
+		var name = req.body.name, email = req.body.email, date = req.body.date, total = req.body.total;
 
-		connection.query('INSERT INTO transactions (custName, custEmail, txn_date) VALUES (?, ?, ?)',
-			[name, email, date],
+		connection.query('INSERT INTO transactions (custName, custEmail, txn_date, totalAmt) VALUES (?, ?, ?, ?)',
+			[name, email, date, total],
 			function(err, result) {
 		  		if (!err){
 
