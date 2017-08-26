@@ -30,7 +30,7 @@ export default class Invoice extends React.Component {
                 return (
                   <div >
                     <div className = "form-group" >
-                    <label className = "inputLabel" > Name:
+                      <label className = "control-label col-sm-2" > Name:
                     < /label>
                     <input className = "form-control"
                     type = "text"
@@ -39,17 +39,18 @@ export default class Invoice extends React.Component {
                     <
                     /div> <
                     div className = "form-group" >
-                    <
-                    label className = "inputLabel" > Email: < /label> <
-                    input type = "email"
+                    <label className = "control-label col-sm-2" > Email: < /label>
+                    <input type = "email"
+                    className = "form-control"
                     name = "email"
                     onChange = { this.onEmailChange } value = { this.state.email } className = "inputFields" / >
                     <
                     /div> <
                     div className = "form-group" >
                     <
-                    label className = "inputLabel" > Due Date: < /label> <
-                    input type = "date"
+                    label className = "control-label col-sm-2" > Due Date: < /label>
+                    <input className = "form-control"
+                    type = "date"
                     name = "date"
                     onChange = { this.onDateChange } value = { this.state.date } className = "inputFields" / >
                     <
@@ -60,32 +61,32 @@ export default class Invoice extends React.Component {
                     <
                     div className = "col-lg-6" >
                     <
-                    label > Description < /label> <
+                    label className = "control-label col-sm-2"> Description < /label> <
                     /div> <
                     div className = "col-lg-6" >
                     <
-                    label > Amount < /label> <
+                    label className = "control-label col-sm-2"> Amount < /label> <
                     /div> <
                     /div> { lineItemsUI } <
                     /div> <
                     div >
                     <
                     img src = "/src/assets/Add.jpg"
-                    width = "42"
+                    width = "50"
                     height = "42"
                     className = "imgStyle"
                     onClick = { this.addLineItem.bind(this) }
                     /> <
-                    /div> <
-                    div >
+                    /div>
+                    <div>
                     <
-                    label className = "readStyle" >
-                    TOTAL $ { this.state.total } <
+                    label className = "font-weight-bold" >
+                    TOTAL {'  '}   ${ this.state.total } <
                     /label> <
                     /div> <
                     div >
                     <
-                    button type = "button"
+                    button type = "button" className = "btn btn-primary font-weight-bold"
                     onClick = { this.saveData } > SEND < /button> <
                     /div> <
                     /div>

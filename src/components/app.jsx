@@ -6,7 +6,7 @@ export default class App extends React.Component {
         return (
           <form>
               <div className="container">
-                  <h1>Invoice</h1>
+                  <h3>Invoice</h3>
                   <Invoice />
               </div>
           </form>
